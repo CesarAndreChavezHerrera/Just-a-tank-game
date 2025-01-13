@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62i01immaxmc"]
+
+[ext_resource type="Script" path="res://game/assets/balas/bala_v_1.gd" id="1_dy5ab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2fy1"]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2gox"]
+radius = 6.0
+
+[node name="balas" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_dy5ab")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 8, 0, 0, 8, -8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q2fy1")
+
+[node name="damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+shape = SubResource("CircleShape2D_t2gox")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="damage" to="." method="_on_damage_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

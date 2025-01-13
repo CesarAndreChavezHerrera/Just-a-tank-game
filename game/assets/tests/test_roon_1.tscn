@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://nv1f06pcyyct"]
+
+[ext_resource type="PackedScene" uid="uid://l67rxpjm5fqe" path="res://game/assets/jugador/jugador_v1.tscn" id="1_anaon"]
+[ext_resource type="PackedScene" uid="uid://dawon7rft7gev" path="res://game/assets/tests/test_colisiones.tscn" id="2_atkil"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_anaon")]
+position = Vector2(160, 264)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_atkil")]
+position = Vector2(392, 264)

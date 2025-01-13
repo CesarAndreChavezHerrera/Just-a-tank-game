@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf003ykfnl6cv"]
+
+[ext_resource type="Script" path="res://game/assets/cannon_base/cannon.gd" id="1_qd6mg"]
+[ext_resource type="PackedScene" uid="uid://c62i01immaxmc" path="res://game/assets/balas/bala_v1.tscn" id="2_p6yg0"]
+
+[node name="cannon" type="Marker2D"]
+gizmo_extents = 1000.0
+script = ExtResource("1_qd6mg")
+bala = ExtResource("2_p6yg0")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(3.385, 0)
+scale = Vector2(1, 0.5)
+polygon = PackedVector2Array(-8, 8, -8, -8, 24, -8, 24, 8)
+
+[node name="punta" type="Marker2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="direction" type="Marker2D" parent="."]
+position = Vector2(32, 0)

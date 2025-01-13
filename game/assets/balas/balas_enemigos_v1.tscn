@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfsxsnqvm8vdl"]
+
+[ext_resource type="PackedScene" uid="uid://c62i01immaxmc" path="res://game/assets/balas/bala_v1.tscn" id="1_6gfbv"]
+
+[node name="balas_enemigos" instance=ExtResource("1_6gfbv")]
+collision_mask = 3
